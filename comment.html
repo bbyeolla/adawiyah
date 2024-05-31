@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "7eenY1dHixPx56Kf9",
+            });
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Chonburi&family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Arimo', sans-serif;
+            background-color: #ea969f;
+            color: #E4E8C1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        nav {
+            background-color: #ea969f;
+            padding: 25px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 97%;
+            position: fixed;
+            top: 0;
+            z-index: 3;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .logo span {
+            color: #ecf0e0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .logo span:hover{
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            font-family: "Rubik", sans-serif;
+            color: #ecf0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .contact-btn {
+            background-color: #cd6670;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .contact-btn:hover {
+            background-color: #ad4931;
+        }
+
+        footer {
+            background-color: #cd6670;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            z-index: 3;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+        }
+
+        .form-container h2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container input, 
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Arimo', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #cd6670;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #ad4931;
+        }
+
+        #form-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <script>
+            function goToIndex() {
+                window.location.href = 'index.html';}
+        </script>  
+        <div class="logo">      
+            <span onclick="goToIndex()">Adawiyah</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="aboutme.html">About me</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="education.html">Education</a>
+            <a href="passion.html">Passion</a>
+            <a href="calc.html">Calculator</a>
+            <a href="comment.html" class="contact-btn">Comment!</a>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email_id" placeholder="Your Email" required>
+            <textarea id="comment" rows="5" placeholder="Your Comment" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="form-message"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // get value from the form 
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email_id").value;
+            var comment = document.getElementById("comment").value;
+            var messageElement = document.getElementById("form-message");
+
+            //this one check if theres value on the form
+            if (!name || !email || !comment) {
+                messageElement.innerText = "Please fill out all fields.";
+                return;
+            }
+
+            //its like  setter
+            var params = {
+                from_name: name,
+                email: email,
+                message: comment
+            };
+
+            //to change user , create email.js account and change this two
+            emailjs.send("service_541b0ld", "template_4r7q4rf", params)
+            .then(function(response) {
+                messageElement.innerText = "Thank you! Your comment has been sent.";
+                messageElement.style.color = 'green';
+                document.getElementById('commentForm').reset();
+            }, function(error) {
+                messageElement.innerText = "Oops! Something went wrong. Please try again.";
+                messageElement.style.color = 'red';
+            });
+        });
+    </script>
+</body>
+</html>

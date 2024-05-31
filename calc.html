@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Chonburi&family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Arimo', sans-serif;
+            background-color: #ea969f;
+            color: #E4E8C1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #ea969f;
+            padding: 25px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 97%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: #ecf0e0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .logo span:hover {
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            font-family: "Rubik", sans-serif;
+            color: #ecf0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .contact-btn {
+            background-color: #cd6670;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .contact-btn:hover {
+            background-color: #ad4931;
+        }
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+            margin-top: 10%;
+            margin-bottom:12%;
+        }
+        .container {
+            background-color: #cd6670;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+        }
+        .container button {
+            background-color: #ad4931;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .container button:hover {
+            background-color: #8a2e1b;
+        }
+        .container .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        footer {
+            background-color: #cd6670;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <script>
+            function goToIndex() {
+                window.location.href = 'index.html';}
+        </script>  
+        <div class="logo">      
+            <span onclick="goToIndex()">Adawiyah</span>
+        </div>
+        <div class="nav-links">
+            <a href="aboutme.html">About me</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="education.html">Education</a>
+            <a href="passion.html">Passion</a>
+            <a href="calc.html">Calculator</a>
+            <a href="comment.html" class="contact-btn">Comment!</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <h1>BMI Calculator</h1>
+            <input type="number" id="weight" placeholder="Enter weight in kg">
+            <input type="number" id="height" placeholder="Enter height in meters">
+            <button onclick="calculateBMI()">Calculate BMI</button>
+            <div id="result" class="result"></div>
+            <div id="errorMsg" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById('weight').value);
+            let height = parseFloat(document.getElementById('height').value);
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                document.getElementById('errorMsg').textContent = `Please enter valid numbers for height and weight.`;
+                return;
+            }
+
+            height = height / 100;
+            let bmi = weight / (height * height);
+            let category;
+
+            if (bmi < 18) {
+                category = 'Underweight';
+            } else if (bmi >= 18 && bmi < 25) {
+                category = 'Normal';
+            } else if (bmi >= 25 && bmi < 30) {
+                category = 'Overweight';
+            } else {
+                category = 'Obese';
+            }
+
+            document.getElementById('result').textContent = `Your BMI is ${bmi.toFixed(2)} (${category})`;
+        }
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

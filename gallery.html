@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Chonburi&family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Arimo', sans-serif;
+            background-color: #ea969f;
+            color: #E4E8C1;
+        }
+        nav {
+            background-color: #ea969f;
+            padding: 25px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .logo span {
+            color: #ecf0e0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .logo span:hover {
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            font-family: "Rubik", sans-serif;
+            color: #ecf0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .contact-btn {
+            background-color: #cd6670;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .contact-btn:hover {
+            background-color: #ad4931;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+       
+        }
+
+.text-section {
+    flex: 1;
+    margin-bottom: 11%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+
+.text-section h1 {
+    font-family: "Amarante", serif;
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.gallery-section {
+    flex: 2;
+    overflow-y: auto;
+    scrollbar-width: none;
+    transition: scroll-behavior 0.5s ease;
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.gallery img {
+    margin-left: 30%;
+    max-width: 90%;
+    border-radius: 3px;
+   
+}
+
+.des{
+    border-radius: 10px;
+    left: 15%;
+    top: 39%;
+    position: absolute;
+    width: 25%;
+    height: 13%;
+    background-color: #cd6670;
+    z-index: -2;
+}
+
+.container .text-section p{
+    color: white;
+    font-family: "Rubik", sans-serif;
+}
+
+footer {
+    background-color: #cd6670;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+</style>
+</head>
+
+<body>
+    <nav>
+        <script>
+            function goToIndex() {
+                window.location.href = 'index.html';
+            }
+        </script>  
+        <div class="logo">      
+            <span onclick="goToIndex()">Adawiyah</span>
+        </div>
+        <div class="nav-links">
+            <a href="aboutme.html">About me</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="education.html">Education</a>
+            <a href="passion.html">Passion</a>
+            <a href="calc.html">Calculator</a>
+            <a href="comment.html" class="contact-btn">Comment!</a>
+        </div>
+    </nav>
+        <div class="container">
+            <div class="text-section">
+                <div class="des"></div>
+                <h1>My Gallery</h1>
+                <p>Introducing a heartwarming collection capturing moments of joy.
+                    Every image within this collection spins its own tale,
+                    inviting you to step into the diverse narratives of my journey.
+                </p>
+            </div>
+            <div class="gallery-section">
+                <div class="gallery">
+                    <img  src="img/chong.jpg">
+                    <img  src="img/adudu.jpg">
+                    <img  src="img/gemok.jpg">
+                    <img  src="img/aneeq.jpg">
+                    <img  src="img/hitam.jpg">
+                    <img  src="img/cat1.jpg">
+                    <img  src="img/cat2.jpg">
+                    <img  src="img/aneeqq.jpg">
+                    <img  src="img/UMIE.jpg">
+                </div>
+            </div>
+        </div>
+        <footer>
+            &copy; 2024 Adawiyah's Gallery. All rights reserved.
+        </footer>
+    </body>
+    </html>
+    

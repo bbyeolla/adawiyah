@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Chonburi&family=Playball&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Arimo', sans-serif;
+            background-color: #ea969f;
+            color: #E4E8C1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #ea969f;
+            padding: 25px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .logo span {
+            color: #ecf0e0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .logo span:hover {
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            font-family: "Rubik", sans-serif;
+            color: #ecf0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .contact-btn {
+            background-color: #cd6670;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .contact-btn:hover {
+            background-color: #ad4931;
+        }
+        .container {
+            
+            position: relative;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .main-text {
+            flex: 1;
+            font-family: "Amarante", cursive;
+            text-align: left;
+            max-width: 600px;
+        }
+        .main-text h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .main-text p {
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        .cbtn {
+            background-color: #cd6670;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1rem;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .cbtn:hover {
+            background-color: #e65c50;
+        }
+        .images {
+            background-color: #cd6670;
+            margin-right: 50px;
+            height: 450px;
+            width: 200px;
+            z-index: -2;
+        }
+        .im2 {
+            position: absolute;
+            width: 700px;
+            bottom: 1%;
+            left: 35%;
+            z-index: -1;
+        }
+        /* test for short about me story */
+        .main-text2 {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            font-family: "Amarante", serif;
+            text-align: left;
+        }
+        .main-text2 p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin: 10px 0 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            max-width: 400px;
+        }
+
+        .mid{
+            margin-left: 20%;
+         
+            align-items: center;
+            height: 20px;
+            width: 50%;
+        }
+        .mid2{
+            background-color: #cd6670;
+            flex-direction: column;
+            height: 10px;
+            width: 100%;
+        }
+        
+        #ctn{
+            background-color: #cd6670;
+        }
+       
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .contact-info {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .contact-info h2{
+            font-family: "Rubik", sans-serif;
+        }
+
+        .skills h2{
+            font-family: "Rubik", sans-serif;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+
+
+     
+        /* end */
+        footer {
+            background-color: #cd6670;
+           
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fix;
+            z-index: 2;
+            width: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <script>
+            function goToIndex() {
+                window.location.href = 'index.html';
+            }
+        </script>  
+        <div class="logo">      
+            <span onclick="goToIndex()">Adawiyah</span>
+        </div>
+        <div class="nav-links">
+            <a href="aboutme.html">About me</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="education.html">Education</a>
+            <a href="passion.html">Passion</a>
+            <a href="calc.html">Calculator</a>
+            <a href="comment.html" class="contact-btn">Comment!</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-text">
+            <h2>Hello, <br> I'm Adawiyah</h2>
+            <p>I'm Rabiatul Adawiyah, a dedicate student currently pursuing a Bachelor's Degree in Computer Science with a concetration in Multimedia at UiTM Shah Alam.
+                As I begin my journey in this field, I am excited to combine my interests in technology and creativity.
+                I am motivated and eager to learn, looking forward to contributing to innovative digital projects.</p>
+            <br>
+        </div>
+        <div class="images">
+            <img class="im2" src="img/image.png" >
+        </div>
+    </div>
+
+    <div class="mid"></div>
+    <div class="mid2">
+
+    </div>
+
+    <div class="container" id="ctn">
+        <div class="text-section">
+            <div class="work-experience">
+                <div class="contact-info">
+                    <h2>Contact Me</h2>
+                    <p>I'm here to help and answer any questions you might have. <br>I look forward to hearing from you!</p>
+                    <p><span class="icon">📍</span>Terengganu, 37870-B, Malaysia</p>
+                    <p><span class="icon">📞</span>+011 10323553</p>
+                    <p><span class="icon">✉️</span>adaa.rabiatul@gmail.com</p>
+                </div>
+            </div>
+
+            <br>
+        <!-- contact info -->
+            <div class="skills">
+                <h2>Language</h2>
+                <p>Malay    ★★★★★</p>
+                <p>English  ★★★★</p>
+                <p>Mandarin ★★★</p>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="img/bochuk-removebg-preview.png">
+        </div>
+    </div>
+
+  
+
+    
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
